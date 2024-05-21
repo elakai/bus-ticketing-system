@@ -2,6 +2,27 @@
 
 <%= render @driver %>
 
+<h3>Bus Information</h3>
+
+<table>
+  <thead>
+    <td><strong>Body Number</strong></td>
+    <td><strong>Plate Number</strong></td>
+  </thead>
+
+  <tbody>
+    <tr>
+  
+      <td><%=@driver.bus.body_number%></td>
+      <td><%=@driver.bus.plate_number%></td>
+      
+    </tr>
+
+
+  </tbody>
+
+  </table>
+
 <div>
   <%= link_to "Edit this driver", edit_driver_path(@driver) %> |
   <%= link_to "Back to drivers", drivers_path %>
