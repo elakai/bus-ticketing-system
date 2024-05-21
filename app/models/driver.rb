@@ -1,7 +1,6 @@
 class Driver < ApplicationRecord
   belongs_to :bus
   has_one_attached :image
-  has_many_attached :files
 
   validate :acceptable_image
 

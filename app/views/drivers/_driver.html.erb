@@ -14,16 +14,6 @@
     <%= driver.bus_id %>
   </p>
 
-  <% if driver.files.attached? %>
-    <p>
-      <strong>Image:</strong>
-      <% subject.files.map do |file| %>
-          <%= link_to file.filename, rails_blob_path(file, disposition: "attachment") %>
-          <br>
-      <% end %>
-    </p>
-    <% end %>
-
   <% if driver.image.attached? %>
     <p>
       <strong>Image:</strong>
