@@ -26,6 +26,13 @@
   <%= collection_select(:driver,:bus_id,Bus.all,:id,:plate_number) %>
 </div> 
 
+<div>
+<%= form.label :image, style: "display: block" %>
+<%= form.file_field :image %>
+</div>
+
+
+
   <div>
     <%= form.submit %>
   </div>
