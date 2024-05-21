@@ -2,13 +2,24 @@
 
 <h1>Passengers</h1>
 
-<div id="passengers">
-  <% @passengers.each do |passenger| %>
-    <%= render passenger %>
-    <p>
-      <%= link_to "Show this passenger", passenger %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contact Number</th>
+      <th>Email Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @passengers.each do |passenger| %>
+      <tr>
+        <td><%= link_to passenger.name, passenger %></td>
+        <td><%= passenger.contact_number %></td>
+        <td><%= passenger.email_address %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <%= link_to "New passenger", new_passenger_path %>
