@@ -21,10 +21,10 @@
     <%= form.text_field :contact_number %>
   </div>
 
-  <div>
-    <%= form.label :bus_id, style: "display: block" %>
-    <%= form.text_field :bus_id %>
-  </div>
+  <div class="field">
+  <%= form.label :bus_id %>
+  <%= collection_select(:driver,:bus_id,Bus.all,:id,:plate_number) %>
+</div> 
 
   <div>
     <%= form.submit %>
