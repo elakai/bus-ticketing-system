@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :passenger_id, style: "display: block" %>
-    <%= form.text_field :passenger_id %>
-  </div>
+  <div class="field">
+  <%= form.label :passenger_id %>
+  <%= collection_select(:reservation,:passenger_id,Passenger.all,:id,:name) %>
+</div>
 
-  <div>
-    <%= form.label :trip_id, style: "display: block" %>
-    <%= form.text_field :trip_id %>
-  </div>
+<div class="field">
+  <%= form.label :trip_id %>
+  <%= collection_select(:reservation,:trip_id,Trip.all,:id,:destination) %>
+</div>
 
   <div>
     <%= form.submit %>
