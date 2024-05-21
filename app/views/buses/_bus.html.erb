@@ -9,4 +9,11 @@
     <%= bus.plate_number %>
   </p>
 
+  <% if bus.image.attached? %>
+    <p>
+      <strong>Image:</strong>
+      <% image_tag bus.image %>
+    </p>
+  <% end %>
+
 </div>
