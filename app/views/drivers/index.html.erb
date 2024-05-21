@@ -2,13 +2,21 @@
 
 <h1>Drivers</h1>
 
-<div id="drivers">
-  <% @drivers.each do |driver| %>
-    <%= render driver %>
-    <p>
-      <%= link_to "Show this driver", driver %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contact Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @drivers.each do |driver| %>
+      <tr>
+        <td><%= link_to driver.name, driver %></td>
+        <td><%= driver.contact_number %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New driver", new_driver_path %>
