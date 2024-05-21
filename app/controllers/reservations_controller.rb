@@ -25,6 +25,8 @@ class ReservationsController < ApplicationController
 
     respond_to do |format|
       if @reservation.save
+        @reservation.trip.update(number_of_passengers: (@reservation.trip.number_of_passengers + 1))
+        @reservation.trip.update(total_fare: (@reservation.trip.unit_fare * @reservation.trip.number_of_passengers))
         format.html { redirect_to reservation_url(@reservation), notice: "Reservation was successfully created." }
         format.json { render :show, status: :created, location: @reservation }
       else
