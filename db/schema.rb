@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_21_060222) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_21_060641) do
   create_table "buses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "body_number"
     t.string "plate_number"
@@ -35,5 +35,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_060222) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "trips", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "schedule"
+    t.string "origin"
+    t.string "destination"
+    t.integer "number_of_passengers"
+    t.float "unit_fare"
+    t.float "total_fare"
+    t.bigint "bus_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bus_id"], name: "index_trips_on_bus_id"
+  end
+
   add_foreign_key "drivers", "buses"
+  add_foreign_key "trips", "buses"
 end
