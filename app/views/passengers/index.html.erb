@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Contact Number</th>
       <th>Email Address</th>
+      <th>Image</th>
     </tr>
   </thead>
   <tbody>
@@ -16,10 +17,10 @@
         <td><%= link_to passenger.name, passenger %></td>
         <td><%= passenger.contact_number %></td>
         <td><%= passenger.email_address %></td>
+        <td><%= image_tag passenger.image %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 
 <%= link_to "New passenger", new_passenger_path %>

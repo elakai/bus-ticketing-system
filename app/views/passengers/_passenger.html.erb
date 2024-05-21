@@ -14,4 +14,11 @@
     <%= passenger.email_address %>
   </p>
 
+  <% if passenger.image.attached? %>
+    <p>
+      <strong>Image:</strong>
+      <% image_tag passenger.image %>
+    </p>
+  <% end %>
+
 </div>

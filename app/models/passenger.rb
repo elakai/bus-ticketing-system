@@ -1,7 +1,7 @@
 class Passenger < ApplicationRecord
     has_many :reservations, dependent: :delete_all
     has_many :trips, through: :reservations, dependent: :delete_all
-    has_many_attached :files
+    has_one_attached :image
 
     validate :acceptable_image
 
