@@ -2,6 +2,39 @@
 
 <%= render @bus %>
 
+<h3>List of Trips</h3>
+
+<table>
+  <thead>
+    <td><strong>Schedule</strong></td>
+    <td><strong>Origin</strong></td>
+    <td><strong>Destination</strong></td>
+  </thead>
+
+  <tbody>
+    <% @bus.trips.each do |trip|%>
+    <tr>
+      <td><%=trip.schedule%></td>
+      <td><%=trip.origin%></td>
+      <td><%=trip.destination%></td> 
+      <% end %>  
+    </tr>
+
+    <td><strong>Driver Information</strong></td>
+
+    <% @bus.drivers.each do |driver|%>
+      <tr>
+        <td><%=driver.name%></td>
+        <td><%=driver.contact_number%></td> 
+      </tr>
+
+      
+  </tbody>
+
+  <% end %>
+
+  </table>
+
 <div>
   <%= link_to "Edit this bus", edit_bus_path(@bus) %> |
   <%= link_to "Back to buses", buses_path %>
