@@ -2,13 +2,26 @@
 
 <h1>Reservations</h1>
 
-<div id="reservations">
-  <% @reservations.each do |reservation| %>
-    <%= render reservation %>
-    <p>
-      <%= link_to "Show this reservation", reservation %>
-    </p>
-  <% end %>
-</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Passenger Name</th>
+      <th>Trip Origin</th>
+      <th>Trip Destination</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= linkto reservation.passenger.name, reservation %></td>
+        <td><%= reservation.trip.origin %></td>
+        <td><%= reservation.trip.destination %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 
 <%= link_to "New reservation", new_reservation_path %>
