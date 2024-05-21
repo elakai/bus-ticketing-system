@@ -2,13 +2,31 @@
 
 <h1>Trips</h1>
 
-<div id="trips">
-  <% @trips.each do |trip| %>
-    <%= render trip %>
-    <p>
-      <%= link_to "Show this trip", trip %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Schedule</th>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>No. Of Passengers</th>
+      <th>Unit Fare</th>
+      <th>Total Fare</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td><%= link_to trip.schedule, trip %></td>
+        <td><%= trip.origin %></td>
+        <td><%= trip.destination %></td>
+        <td><%= trip.number_of_passengers %></td>
+        <td><%= trip.unit_fare %></td>
+        <td><%= trip.total_fare %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <%= link_to "New trip", new_trip_path %>
