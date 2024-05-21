@@ -1,7 +1,7 @@
 class Bus < ApplicationRecord
     has_many :drivers
     has_many :trips
-    has_many_attached :files
+    has_one_attached :image
 
     validate :acceptable_image
 
