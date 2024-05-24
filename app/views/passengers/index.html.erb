@@ -1,11 +1,112 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: pink;"><%= notice %></p>
+<div class="main-container">
 
-<h1>Passengers</h1>
+  <div class="main-header">
+    <%= image_tag("PASSENGERS HEADER") %>
+  </div>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+
+    .p0 {
+      border-radius: 20px 0 0 0;
+    }
+
+    .p2 {
+      border-radius: 0 10px 0 0;
+      color: white;
+    }
+
+    .p1 {
+      font-family: "Bebas Neue", sans-serif;
+      background-color: #193146;
+      font-size: 18px;
+    }
+
+    .w1 {
+      text-align: right;
+      color: white;
+      font-size: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 100px;
+    }
+
+    table thead th {
+      color: white;
+      text-align: left;
+      padding: 20px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 20px;
+    
+      border-bottom: 5px solid #dddddd;
+    }
+
+    tbody td {
+      border-bottom: 5px solid #dddddd;
+      padding: 10px;
+      font-family: "Bebas Neue", sans-serif;
+    }
+
+    table tbody tr:nth-of-type(even){
+      background-color: #E9EDED;
+    }
+
+    table tbody tr:nth-of-type(odd){
+      background-color: #FFFFFF;
+    }
+
+    .button {
+      background-color: #CEA60A;
+      border: none;
+      color: white;
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 4px;
+      transition-duration: 0.2s;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    .button:hover {
+      transform: scale(1.03); 
+    }
+
+    .new-passenger-button {
+      background-color: #193146;  /* Dark background color */
+      color: white;               /* White text */
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 4px;
+      transition-duration: 0.2s;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    .new-passenger-button:hover {
+      transform: scale(1.03); 
+      background-color: #CEA60A;  /* Optional: Change background color on hover */
+    }
+  
+  </style>
+</head>
 
 <table>
-  <thead>
+  <thead class="p1">
     <tr>
-      <th>Name</th>
+      <th class="p0">Name</th>
       <th>Contact Number</th>
       <th>Email Address</th>
       <th>Image</th>
@@ -17,10 +118,18 @@
         <td><%= link_to passenger.name, passenger %></td>
         <td><%= passenger.contact_number %></td>
         <td><%= passenger.email_address %></td>
-        <td><%= image_tag passenger.image %></td>
+        <td>
+          <% if passenger.image.present? %>
+            <%= image_tag passenger.image %>
+          <% else %>
+            <!-- Handle case where image is missing -->
+            No Image Available
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "New passenger", new_passenger_path %>
+<%= link_to "New passenger", new_passenger_path, class: "new-passenger-button" %>
+</div>
