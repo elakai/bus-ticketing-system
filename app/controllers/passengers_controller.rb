@@ -62,9 +62,9 @@ class PassengersController < ApplicationController
     def set_passenger
       @passenger = Passenger.find(params[:id])
     end
+# Only allow a list of trusted parameters through.
+def passenger_params
+  params.require(:passenger).permit(:name, :contact_number, :email_address, :image)
 
-    # Only allow a list of trusted parameters through.
-    def passenger_params
-      params.require(:passenger).permit(:name, :contact_number, :email_address, :image)
-    end
+end
 end
