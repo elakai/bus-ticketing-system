@@ -1,4 +1,69 @@
 <p style="color: green"><%= notice %></p>
+<div class="main-container">
+
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+
+    table thead th {
+      color: black;
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 22px;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    tbody td {
+      border-bottom: 1px solid #dddddd;
+      padding: 10px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    table tbody tr:nth-of-type(odd){
+      background-color: #E9EDED;
+    }
+
+    table tbody tr:nth-of-type(even){
+      background-color: #FFFFFF;
+    }
+
+    .button {
+      background-color: #CEA60A;
+      border: none;
+      color: white;
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.2s;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    .button:hover {
+      transform: scale(1.03); 
+    }
+  
+  </style>
+</head>
+
 
 <h1>Buses</h1>
 
@@ -15,7 +80,7 @@
       <tr>
         <td><%= link_to bus.body_number, bus %></td>
         <td><%= bus.plate_number %></td>
-        <td><%= image_tag bus.image %></td>
+        <td ><%= image_tag bus.image %></td>
 
       </tr>
     <% end %>
@@ -23,4 +88,4 @@
 </table>
 
 
-<%= link_to "New bus", new_bus_path %>
+<%= link_to "New bus", new_bus_path, class: "button" %>
