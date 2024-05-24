@@ -1,19 +1,74 @@
 <div id="<%= dom_id bus %>">
+
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Cinzel:wght@400..900&family=Graduate&family=Jacquard+12&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sedan+SC&display=swap" rel="stylesheet">
+
+
+  <style>
+
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+
+    table thead th {
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 30px;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    table thead tr {
+      background: linear-gradient(to right, #000000, #FF8700);
+    }
+
+    p {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 30px;
+      text-align: left;
+      color: white;
+    }
+
+    h1 {
+      font-family: "Graduate", serif;
+      font-size: 50px;
+      text-align: left;
+      color: white;
+    }
+
+    .image {
+      top: 10% ;
+      left: 40% ;
+      position: relative;
+    }
+
+
+  </style>
+</head>
+
+<h1>Bus Information</h1>
   <p>
     <strong>Body number:</strong>
-    <%= bus.body_number %>
+    <td><%= bus.body_number %></td>
   </p>
 
   <p>
     <strong>Plate number:</strong>
     <%= bus.plate_number %>
-  </p>
-
-  <% if bus.image.attached? %>
-    <p>
-      <strong>Image:</strong>
-      <% image_tag bus.image %>
     </p>
-  <% end %>
 
-</div>
+    <% if bus.image.attached? %>
+    <div>
+     <%= image_tag bus.image %>
+      </div>
+    <% end %>
+  
