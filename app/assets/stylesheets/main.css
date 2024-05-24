@@ -46,7 +46,14 @@ table, th, td {
 .main-container {
     background-color: rgb(223, 81, 152);
     padding: 100px;
+
+  .main-container{
+    background-color: rgb(49, 98, 137);
+    height: 100%;
+    padding: 30px;
+
 }
+
 
 
 .subject-header {
