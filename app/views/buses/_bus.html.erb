@@ -1,6 +1,6 @@
 <div id="<%= dom_id bus %>">
 
-<div class="main-container">
+<div class="busshow-container">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -11,32 +11,15 @@
   <style>
 
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-
-    table thead th {
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 30px;
-      border-bottom: 1px solid #dddddd;
-    }
-
-    table thead tr {
-      background: linear-gradient(to right, #000000, #FF8700);
-    }
-
     p {
       font-family: "Bebas Neue", sans-serif;
       font-size: 30px;
       text-align: center;
       color: white;
-      padding:
+      
+      img {
+        
+      }
     }
 
     h1 {
@@ -61,9 +44,17 @@
     <td><strong>Body number:</strong></td>
     <td><%= bus.body_number %></td>
 
-    <% if bus.image.attached? %>
+  </p>
+  <p>
+  <td><strong>Plate number:</strong></td>
+    <td><%= bus.plate_number %></td>
+    </p>
 
+    
+    <% if bus.image.attached? %>
+    <p>
      <td><%= image_tag bus.image %></td>
+     </p>
      
     <% end %>
   
