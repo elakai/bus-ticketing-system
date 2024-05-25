@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
-
-<div class="busshow-container">
 <%= render @bus %>
+<div class="busshow-container">
+
 
 
 <head>
@@ -51,24 +51,19 @@
       -webkit-background-clip: text;
     }
 
-    table tbody tr:nth-of-type(odd){
-      background-color: #03285C;
-      color: white;
+    table tbody tr{
+      background-color: white;
+      color: black;
     }
 
     table tbody th{
-      background: black;
-      color: white;
+      background: #FEE2F4;
+      color: black;
       text-align: center;
       width: 10px;
       padding: 5px;
       font-family: "Abel", sans-serif;
-      font-size: 20px;
-    }
-
-    table tbody tr:nth-of-type(even){
-      background-color: #FFB138;
-      color: white;
+      font-size: 25px;
     }
 
     .button {
@@ -176,10 +171,11 @@
 
   </table>
 
-  </div>
+ 
 
 <div>
   <%= link_to "Edit this bus", edit_bus_path(@bus), class: "button" %> 
   <%= link_to "Back to buses", buses_path, class: "button2" %>
   <%= button_to "Destroy this bus", @bus, class: "button3", method: :delete %>
 </div>
+ </div>
