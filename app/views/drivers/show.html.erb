@@ -75,6 +75,68 @@
       background-color: #FFFFFF;
     }
 
+    .button {
+      background: linear-gradient(to right, rgb(247, 202, 201),  rgb(222, 194, 203) ,  rgb(197, 185, 205), rgb(171, 177, 207), rgb(146,168,209));;
+      border: none;
+      color: black;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      margin: 4px 2px;
+      transition-duration: 0.1s;
+      cursor: pointer;
+      border-radius: 12px;
+      left: 35% ;
+      position: relative;
+    }
+
+    .button2 {
+      background: linear-gradient(to right, rgb(247, 202, 201),  rgb(222, 194, 203) ,  rgb(197, 185, 205), rgb(171, 177, 207), rgb(146,168,209));;
+      border: none;
+      color: black;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      margin: 4px 2px;
+      transition-duration: 0.1s;
+      cursor: pointer;
+      border-radius: 12px;
+      left: 45% ;
+      position: relative;
+    }
+
+    .button3 {
+      background: linear-gradient(to right, rgb(247, 202, 201),  rgb(222, 194, 203) ,  rgb(197, 185, 205), rgb(171, 177, 207), rgb(146,168,209));;
+      border: none;
+      color: black;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      margin: 4px 2px;
+      transition-duration: 0.1s;
+      cursor: pointer;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .button:hover, .button2:hover {
+      transform: scale(1.03); 
+      background-color: black;
+      color: white;
+    }
+
+    .button3:hover {
+      transform: scale(1.03); 
+      background-color: red;
+      color: white;
+    }
+
     .new-driver-button {
       background: linear-gradient(to right, rgb(247, 202, 201),  rgb(222, 194, 203) ,  rgb(197, 185, 205), rgb(171, 177, 207), rgb(146,168,209));;
       font-size: 18px;
@@ -88,11 +150,14 @@
       transition-duration: 0.2s;
       cursor: pointer;
       border-radius: 12px;
+      left: 45% ;
+      position: relative;
     }
 
     .new-driver-button:hover {
       transform: scale(1.03); 
       background-color: #CEA60A;  /* Optional: Change background color on hover */
+      color: black;
     }
 
     .pic {
@@ -138,7 +203,6 @@
 </div>
 
 <div>
-  <%= link_to "Edit this driver", edit_driver_path(@driver), class: "new-driver-button" %> |
-  <%= link_to "Back to drivers", drivers_path, class: "new-driver-button" %>
-
-  <%= button_to "Destroy this driver", @driver, method: :delete, class: "new-driver-button" %></div>
+  <%= link_to "Edit this driver", edit_driver_path(@driver), class: "button" %>
+  <%= link_to "Back to drivers", drivers_path, class: "button2" %> 
+  <%= button_to "Destroy this driver", @driver, method: :delete, class: "button3" %></div>
