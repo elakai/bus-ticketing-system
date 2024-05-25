@@ -76,6 +76,35 @@
       <% else %>
         <p><strong>Image:</strong> No image available</p>
       <% end %>
+
+
+
+<h3>List of Trips</h3>
+
+<table>
+  <thead>
+    <td><strong>Bus</strong></td>
+    <td><strong>Driver/s</strong></td>
+  </thead>
+
+  <tbody>
+    <% @passenger.reservations.each do |reservation|%>
+    <tr>
+      <td><%=reservation.trip.bus.plate_number%></td>
+
+      <%reservation.trip.bus.drivers.each do |driver|%>
+          <td><%=driver.name%> | </td> 
+
+        <% end %>
+    </tr>
+
+
+  </tbody>
+
+  <% end %>
+
+  </table>
+  
     </div>
     <div class="button-container">
       <%= link_to 'Back to Passengers', passengers_path, class: 'button' %>
@@ -84,4 +113,6 @@
     </div>
   </div>
 </body>
+
+
 </html>

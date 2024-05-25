@@ -1,39 +1,173 @@
 <p style="color: green"><%= notice %></p>
-
 <%= render @trip %>
+<div class="trips-container">
 
+
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Castoro+Titling&family=Cinzel:wght@400..900&family=Graduate&family=Jacquard+12&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sedan+SC&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+  <style>
+
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+
+  table thead td {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: "Caveat Brush", cursive;
+    font-size: 30px;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  table thead tr {
+    background: linear-gradient(to right, #5B1349, #FF6AD9, #131D5B);
+    padding-top: 100px;
+  }
+
+  table tbody td {
+    border-bottom: 3px solid #6C3D08;
+    padding: 10px;
+    font-family: "Caveat Brush", cursive;
+    font-size: 30px;
+    text-align: center;
+  }
+
+
+  table tbody tr{
+    background-color: white;
+    color: black;
+  }
+
+
+    .button {
+      background-color: white;
+      font-family: "Bebas Neue", sans-serif;
+      border: none;
+      color: black;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 4px 2px;
+      transition-duration: 0.1s;
+      cursor: pointer;
+      border-radius: 12px;
+      left: 35% ;
+      position: relative;
+    }
+
+    .button2 {
+      background-color: white;
+      font-family: "Bebas Neue", sans-serif;
+      border: none;
+      color: black;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 4px 2px;
+      transition-duration: 0.1s;
+      cursor: pointer;
+      border-radius: 12px;
+      left: 45% ;
+      position: relative;
+    }
+
+    h3 {
+      font-family: "Dancing Script", cursive;
+      font-size: 50px;
+      text-align: center;
+      color: white;
+    }
+
+    .button3 {
+      background-color: white;
+      font-family: "Bebas Neue", sans-serif;
+      border: none;
+      color: black;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 4px 2px;
+      transition-duration: 0.1s;
+      cursor: pointer;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .pic {
+      max-width: 50% ;
+      max-height: 75% ;
+    }
+
+    .button:hover, .button2:hover {
+      transform: scale(1.03); 
+      background-color: black;
+      color: white;
+    }
+
+    .button3:hover {
+      transform: scale(1.03); 
+      background-color: red;
+      color: white;
+    }
+  
+  </style>
+</head>
 <h3>List of Passengers</h3>
 
 <table>
   <thead>
+  <tr>
     <td><strong>Name</strong></td>
     <td><strong>Contact Number</strong></td>
+    </tr>
   </thead>
 
   <tbody>
     <% @trip.reservations.each do |reservation|%>
     <tr>
       <td><%=reservation.passenger.name%></td>
-      <td><%=reservation.passenger.contact_number%></td>
+      <td><%=reservation.passenger.contact_number%></td>   
     </tr>
-    <% end %> 
+   <% end %> 
 
-    <td><strong>Driver Information</strong></td>
-
-    <% @trip.bus.drivers.each do |driver|%>
-      <tr>
-      <td><%=driver.name%></td> 
-      <td><%=driver.contact_number%></td> 
-      </tr>
+    
 
   </tbody>
-<% end %>
+
 
   </table>
 
-<div>
-  <%= link_to "Edit this trip", edit_trip_path(@trip) %> |
-  <%= link_to "Back to trips", trips_path %>
+  <table style width="50%">
+<% @trip.bus.drivers.each do |driver|%>
+      <tr class="driver">
+      <td>Driver Information</td>
+      <td><%=driver.name%></td> 
+      <td><%=driver.contact_number%></td> 
+      </tr>
+      <% end %>
 
-  <%= button_to "Destroy this trip", @trip, method: :delete %>
+      </table>
+<div>
+  <%= link_to "Edit this trip", edit_trip_path(@trip), class: "button" %> |
+  <%= link_to "Back to trips", trips_path, class: "button2" %>
+
+  <%= button_to "Destroy this trip", @trip, method: :delete, class: "button3" %>
 </div>
