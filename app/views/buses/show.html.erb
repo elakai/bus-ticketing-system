@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
-
-<div class="busshow-container">
 <%= render @bus %>
+<div class="busshow-container">
+
 
 
 <head>
@@ -176,10 +176,11 @@
 
   </table>
 
-  </div>
+ 
 
 <div>
   <%= link_to "Edit this bus", edit_bus_path(@bus), class: "button" %> 
   <%= link_to "Back to buses", buses_path, class: "button2" %>
   <%= button_to "Destroy this bus", @bus, class: "button3", method: :delete %>
 </div>
+ </div>
