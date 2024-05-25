@@ -104,6 +104,12 @@ table, th, td {
     padding: 10px;
 }
 
+.trips-container{
+    background-color: rgb(26, 1, 46);
+    height: 100%;
+    padding: 10px;
+}
+
 
 .subject-header {
     display: flex;
