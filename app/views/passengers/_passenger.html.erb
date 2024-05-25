@@ -46,8 +46,7 @@
 </head>
 <body>
   <!-- Header Image -->
- 
-  <img src="<%= asset_path('NEW_PASSENGER_HEADER.jpg') %>" alt="New Passenger Header" class="header-image">
+  <img src="<%= asset_path('NEW PASSENGER HEADER.png') %>" alt="NEW PASSENGER HEADER" class="header-image">
 
   <h1>List of Passengers</h1>
   <div id="<%= dom_id(passenger) %>" class="passenger-info">
@@ -73,6 +72,30 @@
         <strong>Image:</strong> No image available
       </p>
     <% end %>
+
+     <h1>List of Passengers</h1>
+  <div id="<%= dom_id(passenger) %>" class="passenger-info">
+    <p>
+      <strong>Name:</strong>
+      <%= passenger.name %>
+    </p>
+    <p>
+      <strong>Contact Number:</strong>
+      <%= passenger.contact_number %>
+    </p>
+    <p>
+      <strong>Email Address:</strong>
+      <%= passenger.email_address %>
+    </p>
+    <% if passenger.image.attached? %>
+      <p>
+        <strong>Image:</strong>
+        <%= image_tag(passenger.image, alt: "#{passenger.name}'s image") %>
+      </p>
+    <% else %>
+      <p>
+        <strong>Image:</strong> No image available
+      </p>
   </div>
 </body>
 </html>
