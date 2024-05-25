@@ -123,6 +123,20 @@ table, th, td {
         max-width: 100%; 
     }
 }
+
+  .trip-table {
+        background-color: #ff1493; /* Dark pink background */
+        color: white; /* Text color */
+        width: 100%; /* Full width */
+        border-collapse: collapse; /* Collapse borders */
+      }
+      
+      .trip-table th,
+      .trip-table td {
+        padding: 10px; /* Padding */
+        border: 1px solid white; /* White border */
+      }
+     
       
 .driver-container{
     height: 100%;
