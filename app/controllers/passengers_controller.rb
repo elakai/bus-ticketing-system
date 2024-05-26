@@ -22,7 +22,7 @@ class PassengersController < ApplicationController
   # POST /passengers or /passengers.json
   def create
     @passenger = Passenger.new(passenger_params)
-
+  
     respond_to do |format|
       if @passenger.save
         format.html { redirect_to passenger_url(@passenger), notice: "Passenger was successfully created." }
@@ -33,7 +33,7 @@ class PassengersController < ApplicationController
       end
     end
   end
-
+  
   # PATCH/PUT /passengers/1 or /passengers/1.json
   def update
     respond_to do |format|
@@ -57,14 +57,20 @@ class PassengersController < ApplicationController
     end
   end
 
+  # Delete all passengers
+  def delete_all
+    Passenger.delete_all
+    redirect_to passengers_path, notice: 'All passengers have been deleted.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_passenger
       @passenger = Passenger.find(params[:id])
     end
-# Only allow a list of trusted parameters through.
-def passenger_params
-  params.require(:passenger).permit(:name, :contact_number, :email_address, :image)
 
-end
+    # Only allow a list of trusted parameters through.
+    def passenger_params
+      params.require(:passenger).permit(:name, :contact_number, :email_address, :image)
+    end
 end
