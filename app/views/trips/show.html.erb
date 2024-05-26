@@ -3,7 +3,6 @@
 <div class="trips-container">
 
 
-
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -34,6 +33,7 @@
   table thead tr {
     background: linear-gradient(to right, #5B1349, #FF6AD9, #131D5B);
     padding-top: 100px;
+    text-align: center;
   }
 
   table tbody td {
@@ -49,7 +49,6 @@
     background-color: white;
     color: black;
   }
-
 
     .button {
       background-color: white;
@@ -87,6 +86,10 @@
       position: relative;
     }
 
+    .passenger {
+      text-align: center;
+    }
+
     h3 {
       font-family: "Dancing Script", cursive;
       font-size: 50px;
@@ -111,11 +114,6 @@
       position: relative;
     }
 
-    .pic {
-      max-width: 50% ;
-      max-height: 75% ;
-    }
-
     .button:hover, .button2:hover {
       transform: scale(1.03); 
       background-color: black;
@@ -127,20 +125,29 @@
       background-color: red;
       color: white;
     }
+
+    hr { 
+      width: 100% ;
+      margin-left: 0;
+  }
   
   </style>
 </head>
-<h3>List of Passengers</h3>
+
+<div class="tripss-container">
+
+<div class="trips_header">
+  <%= image_tag("PASSENGERS HEADER.png") %>
+</div>
 
 <table>
-  <thead>
+  <thead class="passenger">
   <tr>
-    <td><strong>Name</strong></td>
-    <td><strong>Contact Number</strong></td>
-    </tr>
+    <td>Name</td>
+    <td>Contact Number</td>
+  </tr>
   </thead>
 
-  <tbody>
     <% @trip.reservations.each do |reservation|%>
     <tr>
       <td><%=reservation.passenger.name%></td>
@@ -148,23 +155,28 @@
     </tr>
    <% end %> 
 
-    
-
-  </tbody>
-
 
   </table>
+  <hr>
+  </div>
 
-  <table style width="50%">
-<% @trip.bus.drivers.each do |driver|%>
-      <tr class="driver">
-      <td>Driver Information</td>
-      <td><%=driver.name%></td> 
-      <td><%=driver.contact_number%></td> 
-      </tr>
-      <% end %>
+  <h1> Driver Information</h1>
+  <table>
+  <thead>
+  <tr>
+  <td>Name</td>
+  <td>Contact Number</td>
+  </tr>
+  </thead>
+  <% @trip.bus.drivers.each do |driver|%>
+    <tr>
+    <td><%=driver.name%></td> 
+    <td><%=driver.contact_number%></td> 
+    </tr>
+    <% end %>
 
-      </table>
+    </table>
+
 <div>
   <%= link_to "Edit this trip", edit_trip_path(@trip), class: "button" %> |
   <%= link_to "Back to trips", trips_path, class: "button2" %>
