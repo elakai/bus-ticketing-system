@@ -101,6 +101,9 @@
       <table class="trip-table">
         <thead>
           <tr class="bus-drivers-row">
+            <th>Schedule</th>
+            <th>Origin</th>
+            <th>Destination</th>
             <th>Bus</th>
             <th>Driver/s</th>
           </tr>
@@ -109,6 +112,9 @@
         <tbody>
           <% @passenger.reservations.each do |reservation|%>
             <tr>
+              <td><%= reservation.trip.schedule %></td>
+              <td><%= reservation.trip.origin %></td>
+              <td><%= reservation.trip.destination %></td>
               <td><%= reservation.trip.bus.plate_number %></td>
               <td>
                 <% reservation.trip.bus.drivers.each do |driver| %>
