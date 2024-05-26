@@ -60,9 +60,9 @@
       color: #ff1493;
     }
     .trip-image {
-      width: 1300px; /* Adjust image size as needed */
-      height: auto; /* Maintain aspect ratio */
-      margin-bottom: 20px; /* Add space below the image */
+      width: 1300px;
+      height: auto;
+      margin-bottom: 20px;
       border: 5px solid black;
     }
     .trip-table {
@@ -74,6 +74,12 @@
     .trip-table td {
       padding: 10px;
       border: 1px solid black;
+    }
+
+    .bus-drivers-row {
+      background-color: #e75480; /* Dark Pink */
+      color: white;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -90,31 +96,29 @@
       <% else %>
         <p><strong>Image:</strong> No image available</p>
       <% end %>
-
-    
-      <img src="<%= asset_path('LIST') %>" alt="LIST" class="trip-image">
-
+      <img src="<%= asset_path("LIST OF TRIPS HEADER ") %>" alt="LIST OF TRIPS HEADER" class="header-image">
+   
       <table class="trip-table">
         <thead>
-          <tr>
+          <tr class="bus-drivers-row">
             <th>Bus</th>
-            <th>Drivers</th>
+            <th>Driver/s</th>
           </tr>
         </thead>
+    
         <tbody>
-          <% @passenger.reservations.each do |reservation| %>
+          <% @passenger.reservations.each do |reservation|%>
             <tr>
               <td><%= reservation.trip.bus.plate_number %></td>
               <td>
                 <% reservation.trip.bus.drivers.each do |driver| %>
-                  <%= driver.name %> |
+                  <%= driver.name %> | 
                 <% end %>
-              </td>
+              </td> 
             </tr>
           <% end %>
         </tbody>
       </table>
-
     </div>
     <div class="button-container">
       <%= link_to 'Back to Passengers', passengers_path, class: 'button' %>
@@ -123,6 +127,4 @@
     </div>
   </div>
 </body>
-
-
 </html>

@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+ get 'delete_all_passengers', to: 'passengers#delete_all', as: 'delete_all_passengers'
+
 end
+

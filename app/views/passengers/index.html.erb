@@ -1,9 +1,14 @@
 <p style="color: pink;"><%= notice %></p>
 <div class="passenger-container">
+<div class="passenger-header" style="background: linear-gradient(to right, #ffd8e6, #ffe6ff, #e6e6ff, #e6f7ff); border: 5px solid black;">
+<%= image_tag("PASSENGERS HEADER.png") %>
+</div>
 
-  <div class="passenger-header">
-    <%= image_tag("PASSENGERS HEADER.png") %>
-  </div>
+
+
+  <!-- Rest of your HTML code -->
+</div>
+
 
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +27,7 @@
 
     .p1 {
       font-family: "Bebas Neue", sans-serif;
-      background-color: #193146;
+      background-color: #e75480; 
       font-size: 18px;
     }
 
@@ -35,7 +40,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 60px;
+      margin-top: 20px;
     }
 
     table thead th {
@@ -62,8 +67,8 @@
       background-color: #FFFFFF;
     }
 
-    .button {
-      background-color: #CEA60A;
+    .destroy-all-passengers-button {
+      background-color: #193146;
       border: none;
       color: white;
       padding: 12px 15px;
@@ -79,11 +84,12 @@
 
     .button:hover {
       transform: scale(1.03); 
+      background-color: #CEA60A; 
     }
 
     .new-passenger-button {
-      background-color: #193146;  /* Dark background color */
-      color: white;               /* White text */
+      background-color: #193146;  
+      color: white;              
       padding: 12px 15px;
       text-align: center;
       text-decoration: none;
@@ -97,7 +103,7 @@
 
     .new-passenger-button:hover {
       transform: scale(1.03); 
-      background-color: #CEA60A;  /* Optional: Change background color on hover */
+      background-color: #CEA60A;  
     }
   
   </style>
@@ -131,5 +137,11 @@
   </tbody>
 </table>
 
-<%= link_to "New passenger", new_passenger_path, class: "new-passenger-button" %>
+<div style="text-align: center;">
+  <%= link_to "New passenger", new_passenger_path, class: "new-passenger-button" %>
+  
 </div>
+
+</div>
+</body>
+</html>
